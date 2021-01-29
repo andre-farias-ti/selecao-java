@@ -1,0 +1,33 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem>
+        <a ngbNavLink>Consulta Agrupada</a>
+        <ng-template ngbNavContent>
+            <app-consultar-agrupados-distribuidora></app-consultar-agrupados-distribuidora>
+        </ng-template>
+    </li>
+    <li ngbNavItem>
+        <a ngbNavLink>Cusultar/Alterar Historico</a>
+        <ng-template ngbNavContent>
+            <app-consultar-editar-historico></app-consultar-editar-historico>
+        </ng-template>
+    </li>
+    <li ngbNavItem>
+        <a ngbNavLink>Consultar por Media de Venda</a>
+        <ng-template ngbNavContent>
+            <app-consultar-media-compra-venda></app-consultar-media-compra-venda>
+        </ng-template>
+    </li>
+    <li ngbNavItem>
+        <a ngbNavLink>Consultar Media Municipio</a>
+        <ng-template ngbNavContent>
+            <app-consultar-media-municipio></app-consultar-media-municipio>
+        </ng-template>
+    </li>
+    <li ngbNavItem>
+        <a ngbNavLink>Consultar Por Sigla</a>
+        <ng-template ngbNavContent>
+            <app-consultar-por-sigla></app-consultar-por-sigla>
+        </ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>

@@ -1,0 +1,155 @@
+
+
+GET http://localhost:8080/api/v1/usuario/1
+
+###
+
+POST http://localhost:8080/api/v1/usuario/salvar
+Content-Type: application/json
+
+{
+   "pessoa":{
+      "nome":"João Pesso",
+      "email":"joaoPessoa@gmail.com",
+      "cpf":"12177001067",
+      "dtNascimento":"1988-10-23T02:00:00.000+00:00",
+      "telefone":"83988631130",
+      "endereco":{
+         "estado":"Paraiba",
+         "cidade":"João Pessoa",
+         "bairro":"oitizeiro",
+         "rua":"pr jose severino de oliveira",
+         "numero":"111",
+         "complemento":"casa"
+      }
+   },
+   "login":"joao",
+   "senha":"12345",
+   "idPerfil":2
+}
+
+###
+
+GET http://localhost:8080/api/v1/usuario/deletar/2
+Content-Type: application/json
+
+###
+
+POST http://localhost:8080/api/v1/usuario/editar
+Content-Type: application/json
+
+{
+   "pessoa":{
+      "id": 1,
+      "nome":"André Luis",
+      "email":"joaoPessoa@gmail.com",
+      "cpf":"12177001067",
+      "dtNascimento":"1988-10-23T02:00:00.000+00:00",
+      "telefone":"83988631130",
+      "endereco":{
+         "id": 1,
+         "estado":"Paraiba",
+         "cidade":"João Pessoa",
+         "bairro":"oitizeiro",
+         "rua":"pr jose severino de oliveira",
+         "numero":"111",
+         "complemento":"casa"
+      }
+   },
+   "login":"joao",
+   "senha":"12345",
+   "idPerfil":1
+}
+
+###
+
+GET http://localhost:8080/api/v1/historico
+
+###
+
+GET http://localhost:8080/api/v1/historico/1
+
+###
+
+POST http://localhost:8080/api/v1/historico
+Content-Type: application/json
+
+{
+    "regiaoSigla": "CO",
+    "estadoSigla": "DF",
+    "municipio": "BRASILIA",
+    "revenda": "AUTO POSTO CHAVES LTDA",
+    "instalacaoCodigo": 7970,
+    "produto": "DIESEL",
+    "dataDaColeta": "2018-01-03",
+    "valorDeCompra": 3.218,
+    "valorDeVenda": 3.559,
+    "unidadeDeMedida": "R$ / litro",
+    "bandeira": "PETROBRAS DISTRIBUIDORA S.A."
+}
+
+###
+
+PUT http://localhost:8080/api/v1/historico/1
+Content-Type: application/json
+
+{
+    "regiaoSigla": "CO",
+    "estadoSigla": "DF",
+    "municipio": "PUT",
+    "revenda": "AUTO POSTO ATUALIZADO PUT",
+    "instalacaoCodigo": 7970,
+    "produto": "PUT",
+    "dataDaColeta": "2018-01-03",
+    "valorDeCompra": 3.100,
+    "valorDeVenda": 4.700,
+    "unidadeDeMedida": "R$ / litro",
+    "bandeira": "PETROBRAS DISTRIBUIDORA S.A."
+}
+
+###
+
+DELETE http://localhost:8080/api/v1/historico/1
+
+
+###
+
+POST http://localhost:8080/api/v1/historico/csv
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="text"
+
+Arquivo CSV
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="historicoCSV"; filename="2019-1_CA.csv"
+Content-Type: text/csv
+
+< ./2019-1_CA.csv
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+GET http://localhost:8080/api/v1/historico/media-valor-venda/joao pessoa/municipios
+
+###
+
+GET http://localhost:8080/api/v1/historico/regioes/NE
+
+###
+
+GET http://localhost:8080/api/v1/historico/bandeiras?page=10&size=10
+
+###
+
+GET http://localhost:8080/api/v1/historico/data-da-coleta
+
+###
+
+GET http://localhost:8080/api/v1/historico/media-valores/caceres/municipios
+
+###
+
+GET http://localhost:8080/api/v1/historico/media-valores/ipiranga/bandeiras
+
+###
