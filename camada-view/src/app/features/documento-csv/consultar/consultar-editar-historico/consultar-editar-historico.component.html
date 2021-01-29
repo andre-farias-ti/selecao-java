@@ -1,0 +1,99 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card panel-primary">
+				<div class="card-body">
+					<form>
+						<div class="form-group">
+							<h4>Consultar/Alterar</h4>
+						</div>
+						<div class="form-group">
+							<div class="row">
+                                <div class="col-md-6">
+                                    <label>Codigo(id)</label>
+                                    <input [(ngModel)]="id" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+                                </div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-right">
+								<button type="button" class="btn btn-primary" (click)="consultar()">Consultar</button>
+							</div>
+						</div>
+                    </form>
+                    <form *ngIf="regiaoSigla">
+						<div class="form-group">
+							<h4>Historico De Preço</h4>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Sigla Região</label>
+									<input [(ngModel)]="regiaoSigla" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+								<div class="col-md-6">
+									<label>Estado</label>
+									<input [(ngModel)]="estadoSigla" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Municipio</label>
+									<input [(ngModel)]="municipio" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+								<div class="col-md-6">
+									<label>Revenda</label>
+									<input [(ngModel)]="revenda" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>CNPJ</label>
+									<input [(ngModel)]="cnpj" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+								<div class="col-md-6">
+									<label>Produto</label>
+									<input [(ngModel)]="produto" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Data Coleta</label>
+									<input [(ngModel)]="dataDaColeta" [textMask]="{mask: maskUtil.mascaraNascimento}" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+								<div class="col-md-6">
+									<label>Valoar Compra</label>
+									<input [(ngModel)]="valorDeCompra" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Valor venda</label>
+									<input [(ngModel)]="valorDeVenda" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+								<div class="col-md-6">
+									<label>Unidade de Medida</label>
+									<input [(ngModel)]="unidadeDeMedida" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Bandeira</label>
+									<input [(ngModel)]="bandeira" [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 text-center">
+								<button type="button" class="btn btn-primary" (click)="salvar()">Salvar</button>
+                            </div>
+                            <div class="col-md-6 text-center">
+								<button type="button" class="btn btn-danger" (click)="deletar()">Deletar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

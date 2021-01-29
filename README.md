@@ -1,65 +1,73 @@
-# Seleção Java
+# Desafio-INDRA
 
-Olá, tudo tranquilo? Se você chegou até aqui, significa que tem interesse em uma das nossas vagas, certo? Basicamente, o seu código será analisado por um dos nossos arquitetos e se você se sair bem, é bem provável que faça parte do nosso time. Desejamos que você seja muito bem sucedido na atividade quem vem a seguir.
+### Requisitos de sistema
 
-## Vagas
+    *Node v10.3 em diante
+    *Npm v6.4.1 em diante
 
-Estamos em constante ascenção e temos vagas para todos os perfis.
+### Instruções
+ - Após o projeto ser clonado deverá ser aberto em uma ide de sua preferência, recomendo o IntelliJ. 
+     
+   ```sh 
+   https://github.com/andre-farias-ti/selecao-java.git
+   ```
+ 
+   
+### Rodando a aplicação
 
+  - Na parte de back-end executar o comando 'RUN' do Spring Boot ;
+  - Abra um terminal e acesse a pasta 'camada-view' e rode os seguintes comandos:
+ 
+    ```
+    npm install
+    ng serve
+ 
+### Acessando a aplicação
 
-## Do que se trata a atividade?
+  - No seu navegador acesse http://localhost:4200/;
+  - o sistema possui por padrão dois usuário;
+  - O sistema possui autenticação e autorização, sendo assim só quem pode incluir o arquivo 2019-1_CA.csv é o administrador.
+ 
+    ```
+    Administrador
+    usuario: andre
+    senha: 12345
+    
+    Analista
+    usuario: fran
+    senha : 12345
+ 
+### Sobre a aplicação
 
-Precisamos que você nos mostre que sabe trabalhar com a stack Spring e Angular. Basicamente a ideia consiste na criação de dois projetos, uma API escrita com spring-boot 2.x e banco h2, além de uma camada Web escrita com Angular 7 usando webpack e maven para empacotar e unir os projetos.
+   - A API desenvolvida permite a utilização de CRUD para usuários e CRUD para classe de histórico de preços de combustível além de outros recursos customizados para a mesma. A classe de histórico foi criada baseada nos dados do arquivo csv que pode ser baixado através do link -> http://www.anp.gov.br/images/dadosabertos/precos/2018-1_CA.csv
 
-Caso você não manje de Angular, encorajamos que você nos envie a API. Claro, quem enviar a API (backend) + Angular (frontend) estará na frente. Justo não?
+   - A API foi desenvoldia utilizando as tecnologias:
+   H2 Banco de dados.
+   Linguagem JAVA com framework Spring.
 
-### O que será avaliado?
+   - A aplicação conta também com uma documentação interativa através do swagger.
 
-* Todos os requistos devem ser atendidos
-* Uso da stack Spring
-* Uso do padrão arquitetural MVC (no backend e no frontend)
-* Padrões de projeto e SOLID
-* Coesão
-* Baixo acoplamento
-* Polimorfismo
-* Uso dos plugins do maven
-* Uso do webpack
-* Documentação interativa da API
-* Evitar código extremamente verboso
-* Chamadas REST escritas no Visual Code Studio com o plugin RestClient. Iremos fazer chamadas direta a sua API sem o front também. Precisamos das requisições HTTP já montadas para todos os recursos
+## Banco de dados
 
+   - A aplicação conta com o uso do bando de dados H2 direto em memória, o qual é executado automaticamente junto com a aplicação.
 
-### Requisitos que devem ser implementados
+   - Para acessar seu console, vá até o seguinte caminho e clique em run:
+   ```sh
+   http://localhost:8080/api/v1/h2
+   ```
+   - obs: Lembre-se, como o banco está sendo executado em memória, sempre que a aplicação parar, os dados serão perdidos.
 
-* Baixe o arquivo 2019-1_CA.csv por meio do link http://www.anp.gov.br/arquivos/dadosabertos/2019-1_CA.csv e crie uma API REST seguindo os tópicos especificados a seguir
-* Implemente uma documentação interativa. O acesso a essa URI não requer autenticação
-* Implementar recurso para CRUD de usuários
-* Implementar recurso para CRUD de histórico de preço de combustível
-* Implementar recurso para importação de csv
-* Implementar recurso que retorne a média de preço de combustível com base no nome do município
-* Implementar recurso que retorne todas as informações importadas por sigla da região
-* Implementar recurso que retorne os dados agrupados por distribuidora
-* Implementar recurso que retorne os dados agrupados pela data da coleta
-* Implementar recurso que retorne o valor médio do valor da compra e do valor da venda por município
-* Implementar recurso que retorne o valor médio do valor da compra e do valor da venda por bandeira
-* OBS: Você deve deduzir quais são as entidades do domínio necessárias para completar a atividade, tal como os relacionamentos, etc
+## Requisições na API
 
-### Não entregue a atividade sem isso
+   - Para realização das requisições, foi adicionado ao projeto um arquivo Requests-API.rest com as requisições no formato http.
 
-* Documentação interativa da API com o Swagger, ou
-* Crie as chamadas para a API em uma Collection do Postman e exporte para que possamos realizar as chamadas através dela.
+   - Para facilitar as chamadas é recomendado o uso da extensão Rest Client no Visual Studio Code.
 
-### Uma vez feito, como entrego o projeto?
+   - Caso prefira, é possivel realizá-las diretamente através do swagger pelo caminho (http://localhost:8080/api/v1/swagger-ui.html)
 
-* Crie um fork dessa avaliação
-* Desenvolva
-* Faça o push
-* Envie e-mail sinalizando a entrega para o analista técnico que está te apoiando durante o desenvolvimento
-* Você possui 4 dias para entregar a atividade.
+## Contato
 
-
-
-
-
-
-
+ - André Luis Farias
+ - andrefariasti@hotmail.com
+ - [Gitlab](https://gitlab.com/andre-farias-ti)  
+  

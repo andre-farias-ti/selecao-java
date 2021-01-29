@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card panel-primary">
+				<div class="card-body">
+					<form>
+						<div class="form-group">
+							<h4>Consultar Media Municipio</h4>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-3">
+									<label>Nome da Cidade</label>
+                                    <input [(ngModel)]="nomeConsulta" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Opção</label>
+                                    <select class="form-control" [(ngModel)]="optEscolha" [ngModelOptions]="{standalone: true}">
+                                        <option [value]=""></option>
+                                        <option *ngFor="let item of listaOpt" [value]="item.id">{{item.descricao}}</option>
+                                      </select>
+                                </div>
+                                <div class="col-md-3" *ngIf="mediaValorCompra">
+									<label>Media de Compra</label>
+									<input [(ngModel)]="mediaValorCompra" disabled [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+                                </div>
+                                <div class="col-md-3" *ngIf="mediaValorVenda">
+									<label>Media de Vendas</label>
+									<input [(ngModel)]="mediaValorVenda" disabled [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-right">
+								<button type="button" class="btn btn-primary" (click)="consultarMedia()">Consultar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

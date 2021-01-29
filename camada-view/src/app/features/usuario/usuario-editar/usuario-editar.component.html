@@ -1,0 +1,98 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card panel-primary">
+				<div class="card-body">
+					<form>
+						<div class="form-group">
+							<h4>Cadastrar Usuário</h4>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Nome do Solicitante</label>
+									<input [(ngModel)]="nome" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+								<div class="col-md-6">
+									<label>CPF do Solicitante</label>
+									<input [(ngModel)]="cpf" [textMask]="{mask: maskUtil.mascaraCpf}" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Data de Nascimento</label>
+									<input [(ngModel)]="dtNascimento" [textMask]="{mask: maskUtil.mascaraNascimento}" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+								<div class="col-md-6">
+									<label>Telefone</label>
+									<input [(ngModel)]="telefone" [textMask]="{mask: maskUtil.mascaraTelefone}" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Email</label>
+									<input [(ngModel)]="email" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+								<div class="col-md-6">
+									<label>Estado</label>
+									<input [(ngModel)]="estado" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Cidade</label>
+									<input [(ngModel)]="cidade" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+								<div class="col-md-6">
+									<label>Bairro</label>
+									<input [(ngModel)]="bairro" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Rua</label>
+									<input [(ngModel)]="rua" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+								<div class="col-md-6">
+									<label>Número</label>
+									<input [(ngModel)]="numero" required [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Complemento</label>
+									<input [(ngModel)]="complemento" [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Login</label>
+									<input [(ngModel)]="login" [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+								<div class="col-md-6">
+									<label>Senha</label>
+									<input [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" class="form-control" type="password">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Perfil</label>
+									<input [(ngModel)]="idPerfil" [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+								</div>
+								<div class="col-md-6">
+									<label>Confirme a Senha</label>
+									<input [(ngModel)]="senhaNovamente" [ngModelOptions]="{standalone: true}" class="form-control" type="password">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<button type="button" class="btn btn-primary" (click)="editarUsuario()">Salvar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

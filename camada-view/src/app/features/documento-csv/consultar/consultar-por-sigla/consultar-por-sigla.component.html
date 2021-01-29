@@ -1,0 +1,70 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card panel-primary">
+				<div class="card-body">
+					<form>
+						<div class="form-group">
+							<h4>Consultar Dados Por Sigla</h4>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Sigla Região</label>
+                                    <select class="form-control" [(ngModel)]="sigla" [ngModelOptions]="{standalone: true}">
+                                        <option [value]=""></option>
+                                        <option *ngFor="let item of listaSigla" [value]="item.sigla">{{item.descricao}}</option>
+                                      </select>
+                                </div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-right">
+								<button type="button" class="btn btn-primary" (click)="consultarDadosSigla()">Consultar</button>
+							</div>
+						</div>
+                    </form>
+                    <div class="card-body" *ngIf="listaDados.length > 0">
+                        <form>
+                            <div class="form-group">
+                                <h4>Resultado da Consulta</h4>
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sigla Região</th>
+                                        <th scope="col">Municipio</th>
+                                        <th scope="col">estado</th>
+                                        <th scope="col">revenda</th>
+                                        <th scope="col">Unidade Medida</th>
+                                        <th scope="col">Produto</th>
+                                        <th scope="col">Valor Compra</th>
+                                        <th scope="col">Valor Venda</th>
+                                        <th scope="col">CNPJ</th>
+                                        <th scope="col">Bandeira</th>
+                                        <th scope="col">Data Coleta</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let dados of listaDados">
+                                        <td>{{ dados.regiaoSigla }}</td>
+                                        <td>{{ dados.municipio }}</td>
+                                        <td>{{ dados.estadoSigla }}</td>
+                                        <td>{{ dados.revenda }}</td>
+                                        <td>{{ dados.unidadeDeMedida }}</td>
+                                        <td>{{ dados.produto }}</td>
+                                        <td>{{ dados.valorDeCompra }}</td>
+                                        <td>{{ dados.valorDeVenda }}</td>
+                                        <td>{{ dados.cnpj }}</td>
+                                        <td>{{ dados.bandeira }}</td>
+                                        <td>{{ dados.dataDaColeta }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
