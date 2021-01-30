@@ -39,7 +39,7 @@
  
 ### Sobre a aplicação
 
-   - A API desenvolvida permite a utilização de CRUD para usuários e CRUD para classe de histórico de preços de combustível além de outros recursos customizados para a mesma. A classe de histórico foi criada baseada nos dados do arquivo csv que pode ser baixado através do link -> http://www.anp.gov.br/images/dadosabertos/precos/2018-1_CA.csv
+   - A API desenvolvida permite a utilização de CRUD para usuários e CRUD para classe de histórico de preços de combustível além de outros recursos customizados para a mesma. A classe de histórico foi criada baseada nos dados do arquivo csv que pode ser baixado através do link ->  http://www.anp.gov.br/arquivos/dadosabertos/2019-1_CA.csv
 
    - A API foi desenvolvida utilizando as tecnologias:
    H2 Banco de dados.
