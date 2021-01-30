@@ -46,7 +46,7 @@
 									<td>{{ usuario.pessoa.nome }}</td>
 									<td>{{ usuario.pessoa.cpf }}</td>
 									<td>{{ usuario.login }}</td>
-									<td>{{ usuario.idPerfil }}</td>
+									<td>{{ perfilDesc(usuario.idPerfil) }}</td>
 									<td>
 										<button [disabled]="" class="btn btn-primary" (click)="editarUsuario(usuario.pessoa.id)">Editar</button>
 										<button [disabled]="" class="btn btn-danger" (click)="deletar(usuario.pessoa.id)">Deletar</button>

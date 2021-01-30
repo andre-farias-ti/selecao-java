@@ -36,8 +36,6 @@ export class ConsultarUsuarioComponent implements OnInit {
     this.cpf && params.append('cpf', this.cpf)
     this.http.get(`${this.baseUrl}/usuario/buscar-por-filtro?${params.toString()}`).subscribe((usuario:any) => {
       this.listaUsuarios = usuario;
-      const descricaiID:any = this.perfis.filter((filter:any)=>{return filter.id == this.listaUsuarios[0].idPerfil})
-      this.listaUsuarios[0].idPerfil = descricaiID[0].descricao
       if(usuario.length <= 0){
         alert("Sem Registro");
       }
@@ -49,7 +47,12 @@ export class ConsultarUsuarioComponent implements OnInit {
 
   editarUsuario(id: any) {
     this.router.navigate([`/usuario/editar/${id}`])
-  } 
+  }
+
+   perfilDesc(idPerfil: any) {
+      const descricao = this.perfis.filter((filter:any)=>{return filter.id == idPerfil})
+      return descricao[0].descricao;
+   }
 
   deletar(id:any){
     this.http.get(`${this.baseUrl}/usuario/deletar/${id}`).subscribe(retorno => {
