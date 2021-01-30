@@ -94,17 +94,15 @@ export class UsuarioEditarComponent implements OnInit {
     }else{
       alert("Senha são Diferente")
     }
-
-
   }
 
   formataStringData(data : Date) {
       var dia  = data.getDate().toString().padStart(2, '0')
-      var mes  = (data.getMonth()+1).toString().padStart(2, '0') 
+      var mes  = (data.getMonth()+1).toString().padStart(2, '0')
       var ano  = data.getFullYear();
     return dia+"/"+mes+"/"+ano;
   }
-  
+
   formataDataString(data :String){
     var dia  = data.substring(0,2);
     var mes  = data.substring(3,5);

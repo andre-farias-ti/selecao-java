@@ -11,7 +11,7 @@ import { Util } from '../../../util/util';
   styleUrls: ['./cadastrar-usuario.component.css']
 })
 export class CadastrarUsuarioComponent implements OnInit {
-  
+
   get Util() { return Util }
 
   public perfis = this.Util.perfis;
@@ -66,10 +66,13 @@ export class CadastrarUsuarioComponent implements OnInit {
       idPerfil: this.idPerfilSelect
     }
 
-    this.http.post(this.url, objEnvio).subscribe(retorno => {
-        alert("Usuario Cadastrado com sucesso!")
-        this.router.navigate(['/usuario/consultar'])
-    })
+    if(this.senha == this.senhaNovamente){
+        this.http.post(this.url, objEnvio).subscribe(retorno => {
+            alert("Usuario Cadastrado com sucesso!")
+            this.router.navigate(['/usuario/consultar'])
+        })
+    }else{
+        alert("Senha são Diferente")
+    }
   }
-
 }
