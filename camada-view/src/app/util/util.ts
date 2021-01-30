@@ -7,4 +7,9 @@ export class Util {
         {sigla:"S", descricao:"Sul"},
         {sigla:"SE", descricao:"Sudeste"}
     ]; 
+
+    public static perfis = [
+        {id:"1", descricao:"Administrador"},
+        {id:"2", descricao:"Analista"}
+    ];
 }    

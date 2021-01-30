@@ -77,7 +77,9 @@
 							<div class="row">
 								<div class="col-md-6">
 									<label>Perfil</label>
-									<input [(ngModel)]="idPerfil" [ngModelOptions]="{standalone: true}" class="form-control" type="text">
+									<select class="form-control" [(ngModel)]="idPerfilSelect" [ngModelOptions]="{standalone: true}">
+                                        <option *ngFor="let item of perfis" [value]="item.id">{{item.descricao}}</option>
+                                      </select>
 								</div>
 								<div class="col-md-6">
 									<label>Confirme a Senha</label>

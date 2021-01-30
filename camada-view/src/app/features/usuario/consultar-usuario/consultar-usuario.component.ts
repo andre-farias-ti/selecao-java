@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Mask } from 'src/app/mask/mask.util'
+import { Util } from '../../../util/util';
 
 @Component({
   selector: 'app-consultar-usuario',
@@ -13,11 +14,15 @@ export class ConsultarUsuarioComponent implements OnInit {
 
   public listaUsuarios: any = [];
 
+  get Util() { return Util }
+
   public baseUrl = environment.api_base_url
   public url = `${this.baseUrl}/usuario/buscar`;
 
   get maskUtil() { return Mask }
 
+  public perfis = this.Util.perfis;
+  public idDescricao: any
   public nome: any;
   public cpf: any;
 
@@ -31,6 +36,8 @@ export class ConsultarUsuarioComponent implements OnInit {
     this.cpf && params.append('cpf', this.cpf)
     this.http.get(`${this.baseUrl}/usuario/buscar-por-filtro?${params.toString()}`).subscribe((usuario:any) => {
       this.listaUsuarios = usuario;
+      const descricaiID:any = this.perfis.filter((filter:any)=>{return filter.id == this.listaUsuarios[0].idPerfil})
+      this.listaUsuarios[0].idPerfil = descricaiID[0].descricao
       if(usuario.length <= 0){
         alert("Sem Registro");
       }

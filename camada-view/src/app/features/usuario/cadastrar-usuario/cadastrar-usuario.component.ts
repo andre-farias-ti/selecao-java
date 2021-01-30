@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Mask } from 'src/app/mask/mask.util'
+import { Util } from '../../../util/util';
 
 @Component({
   selector: 'app-cadastrar-usuario',
@@ -10,7 +11,11 @@ import { Mask } from 'src/app/mask/mask.util'
   styleUrls: ['./cadastrar-usuario.component.css']
 })
 export class CadastrarUsuarioComponent implements OnInit {
+  
+  get Util() { return Util }
 
+  public perfis = this.Util.perfis;
+  public idPerfilSelect: any
   public nome: any;
   public cpf: any;
   public dtNascimento: any;
@@ -25,7 +30,6 @@ export class CadastrarUsuarioComponent implements OnInit {
   public login: any;
   public senha: any;
   public senhaNovamente: any;
-  public idPerfil: any;
 
   get maskUtil() { return Mask }
 
@@ -59,7 +63,7 @@ export class CadastrarUsuarioComponent implements OnInit {
       },
       login: this.login,
       senha: this.senha,
-      idPerfil: this.idPerfil
+      idPerfil: this.idPerfilSelect
     }
 
     this.http.post(this.url, objEnvio).subscribe(retorno => {

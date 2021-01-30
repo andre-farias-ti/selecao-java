@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Mask } from 'src/app/mask/mask.util';
 import { environment } from 'src/environments/environment';
+import { Util } from '../../../util/util';
 
 @Component({
   selector: 'app-usuario-editar',
@@ -14,9 +15,12 @@ export class UsuarioEditarComponent implements OnInit {
   public baseUrl = environment.api_base_url
   public url = `${this.baseUrl}/usuario`;
 
+  get Util() { return Util }
+
   get maskUtil() { return Mask }
 
-
+  public perfis = this.Util.perfis;
+  public idPerfilSelect: any
   public nome: any;
   public cpf: any;
   public dtNascimento: any;
@@ -54,6 +58,7 @@ export class UsuarioEditarComponent implements OnInit {
       this.senha = retorno.senha
       this.idPerfil = retorno.idPerfil
       this.senhaNovamente = retorno.senha
+      this.idPerfilSelect = retorno.idPerfil
     })
   }
 
@@ -78,13 +83,19 @@ export class UsuarioEditarComponent implements OnInit {
       },
       login: this.login,
       senha: this.senha,
-      idPerfil: this.idPerfil
+      idPerfil: this.idPerfilSelect
     }
 
-    this.http.post(`${this.url}/editar`, objEnvio).subscribe(retorno => {
-        alert("Usuario editado com sucesso!")
-        this.route.navigate(['/usuario/consultar'])
-    })
+    if(this.senha == this.senhaNovamente){
+        this.http.post(`${this.url}/editar`, objEnvio).subscribe(retorno => {
+          alert("Usuario editado com sucesso!")
+          this.route.navigate(['/usuario/consultar'])
+        })
+    }else{
+      alert("Senha são Diferente")
+    }
+
+
   }
 
   formataStringData(data : Date) {
